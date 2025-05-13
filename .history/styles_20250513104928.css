@@ -1,0 +1,20 @@
+body {
+    background-color: #2a2a2a;
+    color: #f0f0f0;
+    font-family: "Nunito", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #3a3a3e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3s);
+    text-align: center;
+}
+
+.form
