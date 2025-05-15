@@ -16,7 +16,7 @@ function gerarNomeDev() {
     5: "Programador(a)",
     6: "Estagiário(a)",
     7: "Estagiário(a)",
-    8: "EEstagiário(a)",
+    8: "Estagiário(a)",
     9: "Sênior",
     0: "Sênior",
 };
@@ -28,7 +28,7 @@ const meses = {
     4: "que culpa o cache",
     5: "que esquece o que faz",
     6: "do git vazio",
-    7: "das try/ catch vazia",
+    7: "das try/catch vazias",
     8: "famosinho do LinkedIn",
     9: "caçador de bugs",
     10: "do Windows Pirata",
