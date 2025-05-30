@@ -1,14 +1,37 @@
 function gerarNomeDev() {
-    const dia = parseInt(document.getElementById("dia").value);
-    const mes = parseInt(document.getElementById("mes").value);
-    const resultado = document.getElementById("resultado");
+    const diaInput = document.getElementById("dia");
+    const mesInpunt = document.getElementById("mes");
+    const resultadoDiv = document.getElementById("resultado");
+    const mensagemErroSpan = document.getElementById("mensagem-error");
+    const btnCopiar = document.getElementById("btnCopiar");
+
+    mensagemErroSpan.textContent = "";
+    resultadoDiv.textContent = "";
+    btnCopiar.style.display = "none";
+
+    const dia = parseInt(diaInput.value);
+    const mes = parseInt(mesInpunt.value);
 
     if (isNaN(dia) || dia < 1 || dia > 31) {
-        resultado.textContent = "Insira um dia válido.";
+        mensagemErroSpan.textContent = "Por favor, insira um dia válido (entre 1 e 31).";
+        diaInput.focus(); 
         return;
     }
 
-    const títulos = {
+    if (isNaN(mes) || mes < 1 || mes > 12) {
+        mensagemErroSpan.textContent = "Por favor, selecione um mês válido.";
+        mesInpunt.focus()
+        return;
+    }
+
+    const diasNoMes = new Date(2024, mes, 0).getDate();
+    if (dia > diasNoMes) {
+        mensagemErroSpan.textContent = `O mês de ${mesInpunt.options[mesInpunt.selectedIndex].text} tem apenas ${diasNoMes} dias.`;
+        diaInput.focus();
+        return;
+    }
+
+    const titulos = {
     1: "Desenvolvedor(a)",
     2: "Desenvolvedor(a)",
     3: "Programador(a)",
@@ -21,7 +44,7 @@ function gerarNomeDev() {
     0: "Sênior",
 };
 
-const meses = {
+const mesesTexto = {
     1: "bugado(a)",
     2: "do CTRL C, CTRL V",
     3: "das gambiarras",
@@ -37,9 +60,32 @@ const meses = {
 };
 
 const ultimoDigito = dia % 10;
-const titulo = títulos[ultimoDigito];
-const mesTexto = meses[mes];
+const titulo = titulos[ultimoDigito];
+const mesNome = meses[mes];
 
-resultado.textContent = `${titulo} ${mesTexto}`;
+const nomeDevGerado = `${titulo} ${mesNome}`;
+resultadoDiv.textContent = nomeGerado;
+btnCopiar.style.display = "block";
+
+btnCopiar.onclick = () => {
+    navigator.clipboard.writeText(nomeDevGerado)
+    .then(() => {
+        const originalText = btnCopiar.textContent;
+        btnCopiar.textContent = "Copiado!";
+        setTimeout(() => {
+            btnCopiar.textContent = originalText;
+        }, 2000);
+    })
+    .catch(err => {
+        console.error('Erro ao copiar: ',err);
+        const textArea = document.createElement("textarea");
+        textArea.value = nomeDevGerado;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("copy");
+        textArea.remove();
+        alert("Nome copiado para a área de transferência!");
+    });
+};
 
 }

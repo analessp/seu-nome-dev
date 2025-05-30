@@ -16,6 +16,7 @@
         <div class="form-group">
             <label for="mes">Selecione o mês do seu nascimento</label>
             <select id="mes">
+                <option value="">Selecione...</option>
                 <option value="1">Janeiro</option>
                 <option value="2">Fevereiro</option>
                 <option value="3">Março</option>
@@ -30,8 +31,10 @@
                 <option value="12">Dezembro</option>
             </select>
         </div>
+        <span id="mensagem-erro" class="mensagem-erro"></span>
         <button onclick="gerarNomeDev()">Gerar Meu Nome Dev</button>
         <div class="resultado" id="resultado"></div>
+        <button id="btnCopiar" class="btn-copiar" style="display: none;">Copiar Nome</button>
     </div>
     <script src="app.js"></script>
 </body>
