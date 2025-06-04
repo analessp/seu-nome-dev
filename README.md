@@ -30,7 +30,7 @@ seu-nome-dev/
     └── background-animation.gif
 
 ⚙️ Clone o Repositório
-git clone <url-do-seu-repositorio>
-cd seu-nome-dev
+- git clone <url-do-seu-repositorio>
+- cd seu-nome-dev
 
 Desenvolvido por Ana Lessa.
