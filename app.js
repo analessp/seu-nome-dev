@@ -2,7 +2,7 @@ function gerarNomeDev() {
     const diaInput = document.getElementById("dia");
     const mesInpunt = document.getElementById("mes");
     const resultadoDiv = document.getElementById("resultado");
-    const mensagemErroSpan = document.getElementById("mensagem-error");
+    const mensagemErroSpan = document.getElementById("mensagem-erro");
     const btnCopiar = document.getElementById("btnCopiar");
 
     mensagemErroSpan.textContent = "";
@@ -61,10 +61,10 @@ const mesesTexto = {
 
 const ultimoDigito = dia % 10;
 const titulo = titulos[ultimoDigito];
-const mesNome = meses[mes];
+const mesNome = mesesTexto[mes];
 
 const nomeDevGerado = `${titulo} ${mesNome}`;
-resultadoDiv.textContent = nomeGerado;
+resultadoDiv.textContent = nomeDevGerado;
 btnCopiar.style.display = "block";
 
 btnCopiar.onclick = () => {
