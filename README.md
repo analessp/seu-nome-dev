@@ -23,15 +23,10 @@ O projeto é construído com as seguintes tecnologias web padrão:
 A estrutura de pastas e arquivos do projeto é organizada da seguinte forma:
 
 seu-nome-dev/
-
 ├── index.html
-
 ├── styles.css
-
 ├── app.js
-
 └── img/
-
     └── background-animation.gif
 
 ⚙️ Clone o Repositório
