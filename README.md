@@ -32,5 +32,3 @@ seu-nome-dev/
 ## Clone o Repositório
 - git clone <url-do-seu-repositorio>
 - cd seu-nome-dev
-
-Desenvolvido por Ana Lessa.
